@@ -3,13 +3,17 @@ const mongoose = require('../connection')
 const Schema = mongoose.Schema
 
 const Crew = new Schema({
-    id: Number,
-    cast: Array,
-    crew: Array,
-    // cast_crew: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Movie'
-    //   }
+    crew_id: String,
+    role: String,
+    profile_path: String,
+    movie: {
+        type: Schema.Types.ObjectId,
+        ref: 'Movie'
+    },
+    person: {
+        type: Schema.Types.ObjectId,
+        ref: 'Person'
+    }
 })
 
 module.exports = mongoose.model('Crew', Crew)
