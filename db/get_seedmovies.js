@@ -8,9 +8,9 @@ let maxCalls = 100
 Movie.deleteMany({}).then(() => {
     console.log("All movies deleted!")
 }).then(async () => {
-	for(p=1; p<=maxCalls; p++){
+	for(var p=1; p<=maxCalls; p++){
 		var waitTime = 0;
-		if(p % 40 === 0) {
+		if(p % 26 === 0) {
 			waitTime = 10000;
 		}
 		
@@ -28,7 +28,7 @@ function readSeedMovies(p){
 		var resultsLen = data.results.length;
 		for(i=0; i<resultsLen; i++){
 			let result = data.results[i];
-			Movie.create({
+			let movieInfo = {
 				vote_count: result.vote_count,
 				id: result.id,
 				video: result.video,
@@ -43,8 +43,11 @@ function readSeedMovies(p){
 				adult: result.adult,
 				overview: result.overview,
 				release_date: result.release_date 
-			})
+			};
+			Movie.create(movieInfo)
 		}
+	}).catch(err => {
+		console.log(err);
 	})
 	.then(() => {
 		console.log("Data from page " + p + " was added to collection movies.")
