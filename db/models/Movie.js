@@ -16,11 +16,15 @@ const Movie = new Schema({
     backdrop_path: String,
     adult: Boolean,
     overview: String,
-    release_date: Date
-    // cast_crew: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Crew'
-    //   }
+    release_date: Date,
+    cast_crew: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Crew'
+    }],
+    genres:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Genre'
+    }]
 })
 
 module.exports = mongoose.model('Movie', Movie)
