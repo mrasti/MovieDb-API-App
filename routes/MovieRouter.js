@@ -3,8 +3,11 @@ const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/MovieController");
 
-router.get('/', controller.sayHi);
-router.get('/api/movies/', controller.getAll);
-router.get('/movies/title/:title', controller.getTitle);
+router.get('/', controller.getTopFive);
+router.get('/:id', controller.getById);
+router.get('/title/:title', controller.getByTitle);
+
+router.post('/', controller.createNew);
+
 
 module.exports = router

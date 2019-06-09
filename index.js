@@ -11,11 +11,9 @@ const app = express();
 app.use(parser.urlencoded({extended: true}));
 app.use(parser.json());
 
-app.use('/', MovieRouter);
 app.use('/api/movies/', MovieRouter);
-app.use('/movies/title/:title', MovieRouter);
 app.use('/api/crew/', CrewRouter);
-app.use('api/people/', PeopleRouter);
+app.use('/api/people/', PeopleRouter);
 
 app.listen(4000, () => {
     console.log("app listening on port 4000");
