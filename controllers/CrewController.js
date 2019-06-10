@@ -12,6 +12,6 @@ function addDetailsToArray(data) {
 
 module.exports = {
     getTopFive: (req, res) => {
-        Crew.find({}).limit(5).then(c => res.json(addDetailsToArray(c)));
+        Crew.find({}).limit(100).then(c => res.json(addDetailsToArray(c)));
     }
 }

@@ -20,10 +20,6 @@ const Movie = new Schema({
     cast_crew: [{
         type: Schema.Types.ObjectId,
         ref: 'Crew'
-    }],
-    genres:[{
-        type: Schema.Types.ObjectId,
-        ref: 'Genre'
     }]
 })
 

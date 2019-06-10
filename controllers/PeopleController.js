@@ -13,5 +13,21 @@ function addDetailsToArray(data) {
 module.exports = {
     getTopFive: (req, res) => {
         Person.find({}).limit(5).then(p => res.json(addDetailsToArray(p)));
+    },
+    getByName: (req, res) => {
+        var result = {};
+        Person.findOne({name: req.params.name})
+        .then(p => {
+            result.person = p;
+            Crew.find({person: p._id})
+            .populate({
+                path: 'movie',
+                select: 'title release_date poster_path'
+            })
+            .then(c => {
+                result.filmography = c;
+                res.json(result)
+            })
+        })
     }
 }

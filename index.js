@@ -1,15 +1,12 @@
 
 const express = require("express");
-const parser = require('body-parser');
 
 const MovieRouter = require('./routes/MovieRouter');
 const CrewRouter = require('./routes/CrewRouter');
 const PeopleRouter = require('./routes/PeopleRouter');
 
 const app = express();
-
-app.use(parser.urlencoded({extended: true}));
-app.use(parser.json());
+app.use(express.json())
 
 app.use('/api/movies/', MovieRouter);
 app.use('/api/crew/', CrewRouter);
