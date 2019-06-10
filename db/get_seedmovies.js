@@ -11,7 +11,7 @@ Movie.deleteMany({}).then(() => {
 }).then(async () => {
 	for(var p=1; p<=maxCalls; p++){
 		var waitTime = 0;
-		if(p % 26 === 0) {
+		if(p % 40=== 0) {
 			waitTime = 10000;
 		}
 		

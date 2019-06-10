@@ -12,7 +12,7 @@ Crew.deleteMany({}).then(()=>{
 		Movie.find({}).then(async moviesArray => {
 			for(var i=0; i<moviesArray.length; i++){
 				var waitTime = 0;
-				if((i+1) % 35 === 0) {
+				if((i+1) % 40 === 0) {
 					waitTime = 10000;
 				}
 				
