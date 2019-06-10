@@ -12,6 +12,12 @@ app.use('/api/movies/', MovieRouter);
 app.use('/api/crew/', CrewRouter);
 app.use('/api/people/', PeopleRouter);
 
-app.listen(4000, () => {
-    console.log("app listening on port 4000");
+app.set("port", process.env.PORT || 8080);
+
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
 });
+
+// app.listen(4000, () => {
+//     console.log("app listening on port 4000");
+// });
