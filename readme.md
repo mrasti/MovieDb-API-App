@@ -82,11 +82,18 @@ app.listen(4000, () => {
 
 ## API Documentation
 
-|           Movie Collection       |
-|---------------|-------------|------|
-| Path          |      Method   |   |
-|---------------|-------------|------|
-| /             |       get     |    |
-| /:id          |       get     |    |
-| /title/:title |       get     |     |
+|           Route           |   Method  |                 Description                     |
+| :-----------------------: | :-------: | :---------------------------------------------: |
+|      /api/movies/         |    GET    |               Get top 5 movies                  |
+|      /api/movies/:id      |    GET    |               Get a movie by Id                 |
+|  /api/movies/title/:title |    GET    |              Get a movie by Title               |
+|    /api/movies/id/:crew   |    GET    |  Get Cast and Crew for a movie by the movie Id  |
+|       /api/movies/        |   POST    |               Create a new movie                |
+|      /api/movies/:id      |   PATCH   |  Edit an existing movie, each field separately  |
+|      /api/movies/:id      |    PUT    |             Edit an existing movie              |
+|      /api/movies/:id      |   DELETE  |             Delete an existing movie            |
+|      /api/crew/           |    GET    |               Get top 5 crew                    |
+|      /api/people/         |    GET    |               Get top 5 People                  |
+|      /api/people/:name    |    GET    | Get person and their movies with their role, by the person name  |
+
 
