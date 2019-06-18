@@ -75,8 +75,18 @@ app.listen(4000, () => {
   <img src="https://i.imgur.com/8dw7D5D.png">
 </p>
 
-9. At this stage the data can be queried from the local server. After executing ```node index.js```in th eterminal, Postman can be used to test API endpoints.
+9. At this stage the data can be queried from the local server. After executing ```node index.js```in the terminal, Postman can be used to test API endpoints.
 <p align="center">
   <img width= 85% src="https://i.imgur.com/evPaMhj.png">
 </p>
+
+## API Documentation
+
+|           Movie Collection       |
+|---------------|:-------------:|------:|
+| Path          |      Method   |   |
+|---------------|:-------------:|------:|
+| /             |       get     |  |
+| /:id          |       get     |    |
+| /title/:title |       get     |     |
 
